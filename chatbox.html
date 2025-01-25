@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat Box</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #4e4e4e;
+        background: url("nenchatbox.png") no-repeat center center;
+      }
+      .button {
+        background-color: #222222;
+        border: 1px solid #4e4e4e;
+        padding: 8px 16px;
+        margin-left: 20px;
+        text-decoration: none;
+        color: white;
+        font-size: 15px;
+        font-weight: bold;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        border-radius: 50px;
+      }
+
+      /* Hiệu ứng khi chuột hover vào nút */
+      .button:hover {
+        transition-delay: all 0.2s;
+        background-color: #4e4e4e; /* Thay đổi màu nền khi hover */
+        border-color: #222222; /* Thay đổi màu viền khi hover */
+      }
+
+      .nav-buttons p {
+        text-align: center;
+        padding-left: 20px;
+        font-size: 18px;
+      }
+      .chat-container {
+        background: #0078d7;
+        width: 450px;
+        height: 500px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        background: #fff;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      .chat-header {
+        padding: 10px;
+        background: #0078d7;
+        color: white;
+        font-size: 18px;
+        text-align: center;
+        border-radius: 8px 8px 0 0;
+      }
+      .chat-messages {
+        flex: 1;
+        padding: 10px;
+        overflow-y: auto;
+        border-bottom: 1px solid #ccc;
+      }
+      .chat-input-container {
+        padding: 10px;
+        background: #f9f9f9;
+      }
+      .chat-input-container input {
+        width: calc(100% - 90px);
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+      }
+      .chat-input-container button {
+        padding: 10px 15px;
+        margin-left: 5px;
+        background: #0078d7;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      .chat-input-container button:hover {
+        background: #005bb5;
+        width: 400px;
+      }
+      .username-container {
+        width: 400px;
+        padding: 10px;
+        background: #eef0f1;
+        border-bottom: 1px solid #ccc;
+      }
+      .username-container input {
+        /* width: 100%; */
+        width: 400px;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="nav-buttons">
+      <p>
+        <!-- Thêm các link điều hướng -->
+        <a href="index.html" class="button"> 🏠 </a> <br />
+        <br />
+        <a href="gioithieu.html" class="button"> 👋 </a> <br />
+        <br />
+        <a href="chatbox.html" class="button"> ✉ </a> <br />
+        <br />
+        <a href="heart.html" class="button"> 🙂 </a> <br />
+        <br />
+      </p>
+    </div>
+    <br />
+    <br />
+    <div class="chat-container">
+      <div class="chat-header">Chat Box</div>
+      <div class="username-container">
+        <input type="text" id="username" placeholder="Enter your name..." />
+      </div>
+      <div class="chat-messages" id="messages">
+        <!-- Messages will appear here -->
+      </div>
+      <div class="chat-input-container">
+        <input
+          type="text"
+          id="messageInput"
+          placeholder="Type your message..."
+        />
+        <button onclick="sendMessage()">Send</button>
+        <button onclick="recallMessage()">Recall</button>
+      </div>
+    </div>
+
+    <script>
+      function sendMessage() {
+        const username = document.getElementById("username").value.trim();
+        const messageInput = document.getElementById("messageInput");
+        const messages = document.getElementById("messages");
+
+        if (!username) {
+          alert("Please enter your name before sending a message.");
+          return;
+        }
+
+        if (messageInput.value.trim() !== "") {
+          const newMessage = document.createElement("div");
+          newMessage.textContent = `${username}: ${messageInput.value}`;
+          newMessage.style.padding = "5px";
+          newMessage.style.margin = "5px 0";
+          newMessage.style.background = "#e6f7ff";
+          newMessage.style.borderRadius = "4px";
+          newMessage.style.alignSelf = "flex-start";
+          newMessage.className = "message";
+          messages.appendChild(newMessage);
+          messages.scrollTop = messages.scrollHeight;
+          messageInput.value = "";
+        }
+      }
+
+      function recallMessage() {
+        const messages = document.getElementById("messages");
+        const allMessages = messages.getElementsByClassName("message");
+        if (allMessages.length > 0) {
+          messages.removeChild(allMessages[allMessages.length - 1]);
+        } else {
+          alert("No messages to recall!");
+        }
+      }
+    </script>
+  </body>
+</html>

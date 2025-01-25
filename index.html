@@ -1,42 +1,274 @@
 <!DOCTYPE html>
 <html lang="vi">
-
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bài học multi page Website</title>
+    <title>B2DM website TỨ TRỤ 12A4</title>
+    <style>
+        /* Định dạng chung */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0d023a; /* Màu xanh đậm */
+            margin: 0;
+            padding: 0;
+        }
+
+        .button{
+            background-color: #150452; 
+            border: 1px solid #3700ff; 
+            padding: 8px 16px;
+            margin-left: 20px; 
+            text-decoration: none; 
+            color: white; 
+            font-size: 15px;
+            font-weight: bold;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            border-radius: 50px;    
+        }
+
+        /* Hiệu ứng khi chuột hover vào nút */
+        .button:hover {
+            transition-delay: all 0.2s;
+            background-color: #3700ff; /* Thay đổi màu nền khi hover */
+            border-color: #150452; /* Thay đổi màu viền khi hover */    
+        }
+
+        .nav-buttons p {
+            text-align: center;
+            padding-left: 20px;
+            font-size: 18px;
+        }
+
+        .button2{
+            background-color: #520404; 
+            border: 1px solid #ff000088; 
+            padding: 8px 16px;
+            margin-left: 20px; 
+            text-decoration: none; 
+            color: white; 
+            font-size: 15px;
+            font-weight: bold;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            border-radius: 50px;    
+        }
+
+        /* Hiệu ứng khi chuột hover vào nút */
+        .button2:hover {
+            transition-delay: all 0.2s;
+            background-color: #ff00004b; /* Thay đổi màu nền khi hover */
+            border-color: #520404; /* Thay đổi màu viền khi hover */    
+        }
+
+        /* Định dạng phần đầu trang */
+        .header {
+            background-color: #0d023a; /* Màu xanh đậm */
+            background: url("nen3.jpg") no-repeat center center;
+            background-size: 100%;
+            padding: 10px 0;
+            text-align: center;
+        }   
+
+        .text-box {
+            position: relative;
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+            text-align: center;
+            padding: 10px 20px;
+            background: rgba(0, 0, 0, 0.6); /* Khung chữ mờ */
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Tạo đổ bóng */
+        }
+
+        .banner {
+            background: url("anh nhom.jpg") no-repeat center center;
+            background-size: 100%;
+            background-color: #0d023a71;
+            height: 200px;
+            margin: 5400;
+            padding: 100px;
+            font-size: 200px;
+            font-family: fantasy;
+            font-style: italic; 
+            color: #2323aa62;
+            border-radius: 30px; 
+        }
+
+        .slogan {
+            background-color: #2323aa62; /* Màu xanh sáng */
+            padding: 15px;
+            font-size: 30px;
+            font-style: italic;
+            font-family: fantasy;
+            color: #d8cbec;
+        }
+
+        /* Định dạng phần nội dung chính */
+        .main-content {
+            background-color: #2323aa62;  
+            background: url("nen4.jpg") no-repeat center center;
+            background-size: 100%;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            padding: 80px;
+            text-align: center;
+        }
+
+        .box {
+            background-color: #da050567; /* Màu vàng nhạt */
+            border: 2px solid #fdfdfd; /* Màu cam đậm */
+            padding: 30px;
+            font-size: 25px;
+            margin-left: 50px; 
+            margin-top: 50px;
+            font-style: italic;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ; 
+            border-radius: 50px;
+        }
+
+        /* Định dạng phần cuối trang */
+        .footer {
+            background-color: #2a508146; /* Màu đỏ */
+            padding: 20px;
+            text-align: center;
+            color: white;
+        } 
+
+    </style>
 </head>
-
 <body>
-    <!-- Thêm các link điều hướng -->
-    <!-- 1. Điều hướng về trang chủ -->
-    <a href="./">Home</a>
-    <!-- 2. Điều hướng đến contact.html -->
-    <a href="./more-info/contact.html">Contact me</a>
-    <!-- 3. Điều hướng đến my-skill.html -->
-    <a href="./more-info/my-skill.html">My skill</a>
 
+    <!-- Phần đầu trang -->
+    <div class="header">
 
-    <h1>Welcome to My Website!</h1>
-    <hr>
-    <h2>Nguyễn Trần Như Nhộng</h2>
-    <p>Creative Director and Designer - Giám đốc sáng tạo và nhà thiết kế</p>
-    <hr>
+        <p style="color:#efeff5;  
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ; 
+            font-size: 25px;
+            font-style: italic;
+            font-weight: bold;
+            animation: moveText 10s linear infinite;"> 
+            Chào mừng đến với website của B2DM!! Wellcome to B2DM website!! 
+        </p>
 
-    <!-- Thêm hình ảnh tuhoc.cc.jpg và khi click chuột sẽ điều hướng đến contact.html  -->
-    <a href="./more-info/contact.html"><img src="./assets/images/tuhoc.cc.jpg" alt="tuhoc.cc"></a>
-    <h2>About me</h2>
-    <p>Xin chào! Tôi là một Giám đốc sáng tạo và Nhà thiết kế đầy nhiệt huyết, mang trong mình niềm đam mê với nghệ
-        thuật và khả năng tạo ra những trải nghiệm độc đáo và gây ấn tượng. Với kinh nghiệm dày dặn và sự tinh tế trong
-        việc nắm bắt xu hướng và sự phát triển, tôi luôn tìm kiếm cách để đưa ra những giải pháp sáng tạo và ứng dụng
-        độc đáo trong mọi dự án.</p>
-    <p>Tôi đảm bảo rằng mỗi dự án sẽ được thực hiện với sự chính xác và sự đổi mới. Tôi không chỉ đơn thuần là một người
-        sáng tạo, mà còn là một người lãnh đạo đội ngũ, đảm bảo rằng mọi thành viên đều được truyền cảm hứng và tận dụng
-        tối đa khả năng của họ để mang lại kết quả xuất sắc.</p>
-    <hr>
+        <style>
+        @keyframes moveText 
+        {
+            0% { transform: translateX(-100%); /* Bắt đầu từ ngoài biên trái */ }
+            100% { transform: translateX(100%); /* Kết thúc ngoài biên phải */ }
+        }
+        </style>
 
+        <div class="nav-buttons">
+            <p>
+                <!-- Thêm các link điều hướng -->
+                <a href="index.html" class="button">Trang chủ</a>
+                <a href="gioithieu.html" class = "button"> Giới thiệu nhóm </a>
+                <a href="chatbox.html" class="button">Chat box</a>
+                <a href="heart.html" class="button">🙂</a>
+            </p>
+        </div>
+
+        <br>
+        
+
+        <div class="banner"> B2DM </div>
+
+        <div class="slogan"> 
+        <p>
+            Four as one, we rise and run, working hard till the job is done. 
+            <br>
+            <p style = "font-style: italic; font: 100; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;"> 
+                "Bốn người như một, cùng đứng dậy chạy nhanh, chăm chỉ làm việc đến ngày hoàn thành." 
+            </p>
+        </p>
+        </div>
+        <br>
+        <audio controls>
+        <source src="창모 (CHANGMO) - 아름다워 (Beautiful) (OFFICIAL AUDIO).mp3" type="audio/mp3">
+        </audio>
+        <br>
+        <p style = "color: #efeff5;"> 창모 (CHANGMO) - 아름다워 (Beautiful) 🎧</p>
+    </div>
+
+    <!-- Phần nội dung chính -->
+    <p style = "text-align: center; 
+                color:#d8cbec; 
+                font-size: 25px; 
+                font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+                font-style: italic;"> 
+                Thành viên nhóm B2DM 
+    </p>
+
+    <div class="main-content">
+        <div class="box"> 
+            <p style = "color:#d7d2ec;
+                        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;"> 
+                Nguyễn Hoài Gia Bảo
+                <br> <br>
+                <img src="baoava.jpg" alt = "Ảnh Bảo" width="350" height="350" style = "border-radius: 50%">
+                <br>
+                Hài hước, vui vẻ, hòa đồng với mọi người, thích chơi thể thao (điện tử) <br> <br>
+                <a href="BaoNguyen.html" class="button2" style = "font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;"> Xem thêm </a>
+            </p>
+
+        </div>
+
+        <div class="box"> 
+            <p style = "color:#d7d2ec;
+                        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;"> 
+                Nguyễn Công Danh
+                <br> <br>
+                <img src="ndanhava.jpg" alt = "Ảnh NDanh" width="350" height="350" style = "border-radius: 50%">
+                <br>
+                Hòa đồng, thân thiện với mọi người, học rất giỏi và có đam mê âm nhạc. <br> <br>
+                <a href="DanhNguyen.html" class="button2" style = "font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;"> Xem thêm </a>
+            </p>
+
+        </div>
+
+        <div class="box"> 
+            <p style = "color:#d7d2ec;
+                        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;"> 
+                Trần Đặng Công Danh
+                <br> <br>
+                <img src="tdanhava.jpg" alt = "Ảnh TDanh" width="350" height="350" style = "border-radius: 50%">
+                <br>
+                Vui vẻ, hòa đồng với mọi người, thích vẽ tranh, nghe nhạc. <br> <br>
+                <a href="DanhTran.html" class="button2" style = "font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;"> Xem thêm </a>
+            </p>
+
+        </div>
+
+        <div class="box"> 
+            <p style = "color:#d7d2ec;
+                        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;"> 
+                Nguyễn Duy Mạnh
+                <br> <br>
+                <img src="manhava.jpg" alt = "Ảnh Mạnh" width="350" height="350" style = "border-radius: 50%">
+                <br>
+                Hài hước, thân thiện với bạn bè, thầy cô, rất giỏi thể thao. <br> <br>
+                <a href="ManhNguyen.html" class="button2" style = "font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;"> Xem thêm </a>
+            </p>
+
+        </div>
+    </div>
+
+    <!-- Phần cuối trang -->    
+
+    <div class="footer"> 
+        <p style = "font-style: italic; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #d7d2ec;">
+            <b> website's designed by Bao Nguyen, Danh Nguyen, Danh Tran, Manh Nguyen!!!! </b>
+            <br>
+            <h4> <u> <b style = "font-style: italic; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #d7d2ec;"> Contact us: </b> </u> <br> </h4>
+            Danh Trần: <i> danhthoihoa2k7@gmail.com </i>
+            <br> Bảo Nguyễn: <i> giabao2019tb@gmail.com </i>
+            <br> Danh Nguyễn: <i> nguyendanh2k7@gmail.com </i>
+            <br> Mạnh Nguyễn: <i> nguyenmanh@gmail.com </i>
+            <p>&copy; 2025 Copyright belongs to B2DM </p>
+        </p> 
+    </div>
 
 </body>
-
 </html>
+
